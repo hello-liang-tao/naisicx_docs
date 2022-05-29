@@ -1,17 +1,17 @@
-[奈斯创新]C语言编程
+56C语言编程
 ======================================================
 .. toctree::
    :maxdepth: 2
-   :caption: [奈斯创新]C语言编程
+   :caption: C语言编程
    :titlesonly:
 
    c_programming/index
 
-[奈斯创新]JAVA语言编程
+34JAVA语言编程
 ======================================================
    .. toctree::
    :maxdepth: 2
-   :caption: [奈斯创新]JAVA语言编程
+   :caption: JAVA语言编程
    :titlesonly:
 
    java_programming/index
