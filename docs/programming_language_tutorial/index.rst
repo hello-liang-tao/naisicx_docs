@@ -1,6 +1,8 @@
-.. vim: syntax=rst
+.. toctree::
+   :maxdepth: 2
+   :caption: [奈斯创新]编程
+   :titlesonly:
 
-.. _about_embedfire:
 
-关于奈斯创新
-==============
+   c_programming/index
+   java_programming/index
