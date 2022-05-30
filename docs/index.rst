@@ -1,6 +1,6 @@
 .. toctree::
    :maxdepth: 3
-   :caption: [奈斯创新]关于我们
+   :caption: [奈斯创新]1关于我们
    :titlesonly:
 
    README
@@ -9,7 +9,7 @@
 
 .. toctree::
    :maxdepth: 3
-   :caption: [奈斯创新]编程语言学习
+   :caption: [奈斯创新]1编程语言学习
    :titlesonly:
    
    programming_language_tutorial/index
