@@ -3,5 +3,3 @@ JAVA语言编程
 .. toctree::
    :maxdepth: 1
    :titlesonly:
-
-   14天精通C语言编程
