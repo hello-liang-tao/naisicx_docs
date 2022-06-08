@@ -22,4 +22,4 @@ int main(void)
     int area = r*r*PI;
     printf("半径为%d的圆面积为%d\r\n",r,area);
     return 0;
-} 
+}
