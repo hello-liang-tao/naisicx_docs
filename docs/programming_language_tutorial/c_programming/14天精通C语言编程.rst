@@ -390,10 +390,9 @@ struct switch typedef  union  unsigned void     volatile while
 
 图 3-1 C语言关键字
 
-.. literalinclude:: ./code/area_circle.c
-   :caption: ./code/area_circle.c
+.. literalinclude:: code/area_circle.c
+   :caption: area_circle.c
    :language: c
-   :emphasize-lines: 5,7-12
    :linenos:
    :name: area_circle.c
 
