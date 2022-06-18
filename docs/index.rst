@@ -13,8 +13,11 @@ Read the Docs simplifies software documentation by building, versioning, and hos
    about_us
    TODO
 
+[奈斯创新]
+--------------------------
+
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :hidden:
    :caption: [奈斯创新]编程语言学习
    
