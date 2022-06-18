@@ -2,17 +2,16 @@
 ======================================================
 
 .. toctree::
-   :maxdepth: 7
+   :maxdepth: 2
    :caption: [奈斯创新]关于我们
-   :titlesonly:
 
    README
    about_us
    TODO
 
 .. toctree::
-   :maxdepth: 7
+   :maxdepth: 2
    :caption: [奈斯创新]编程语言学习
    
-   programming_language_tutorial/index
+   programming_language_tutorial/c_programming/index
 
