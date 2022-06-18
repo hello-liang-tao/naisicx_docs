@@ -3,6 +3,7 @@
 
 .. toctree::
    :maxdepth: 6
+   :hidden:
    :caption: [奈斯创新]编程语言学习
 
    docs/1.C语言学习前的准备
