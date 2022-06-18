@@ -1,7 +1,8 @@
 [奈斯创新]资料下载中心
 ======================================================
+
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 7
    :caption: [奈斯创新]关于我们
    :titlesonly:
 
@@ -10,9 +11,8 @@
    TODO
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 7
    :caption: [奈斯创新]编程语言学习
-   :titlesonly:
    
    programming_language_tutorial/index
 

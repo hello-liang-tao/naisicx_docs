@@ -1,11 +1,9 @@
 .. toctree::
-   :maxdepth: 2
-   :titlesonly:
+   :maxdepth: 4
 
    c_programming/index
 
-   .. toctree::
+.. toctree::
    :maxdepth: 2
-   :titlesonly:
 
    java_programming/index

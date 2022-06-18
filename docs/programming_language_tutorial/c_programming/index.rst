@@ -1,6 +1,4 @@
-C语言编程
-======================================================
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 2
 
-   14天精通C语言编程
+   /programming_language_tutorial/c_programming/docs/14天精通C语言编程
