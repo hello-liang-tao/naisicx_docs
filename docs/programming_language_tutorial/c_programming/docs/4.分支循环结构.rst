@@ -4,38 +4,70 @@
 4.1.分支结构
 ------------------
 
-   C语言中使用两种选择语句,一是if语句来实现两个分支的选择结构,二是switch语句来实现多分支的选择结构。
+C语言中使用两种选择语句, ``一是if语句来实现两个分支的选择结构,二是switch语句来实现多分支的选择结构``。
 
 4.1.1.if语句
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   小美:如果我能再瘦10斤,我就能穿那件漂亮的碎花裙了!用伪代码描述:设定瘦的斤数为i,如果i大于10斤不能穿,否则能穿。在前面已经学习C语言可以通过关系表达式来描述i > 10或者i < 10这类问题,是如何描述“如果”这个条件呢？在C语言中使用if语句来描述条件判断,用else语句描述否则判断。
+在前面已经学习C语言可以通过关系表达式来描述i > 10或者i < 10这类问题,是如何描述“如果”这个条件呢？在C语言中使用if语句来描述条件判断,用else语句描述否则判断。
 
-.. code-blockc
-   :caption: c test
-   :emphasize-lines: 4,5
+.. code-block:: c
+   :caption: if语句使用举例
    :linenos:
 
    #include <stdio.h>
 
    int main(void)
    {
-       int i = 9;  //定义变量,表示瘦的斤数
+       int age; 
        
-       if(a > 10)
+       printf("请输入年龄\r\n");     //打印提醒信息
+       scanf("%d",&age);           //获取键盘输入
+
+       if(age > 18)
        {
-           printf("可以穿碎花裙啦!");    
+           printf("已经成年啦！\r\n");    
        }
        else
        {
-           printf("不可以穿碎花裙");    
+           printf("未成年！\r\n");    
        }
        return 0;
    }
 
-.. code-blockc
-   :caption: c test
-   :emphasize-lines: 4,5
+
+.. code-block:: c
+   :caption: if语句使用举例
+   :linenos:
+
+    /***************************************************************
+    * @file       area_circle.c
+    * @brief      比较两个实数大小，并按照由大到小输出
+    * @author     奈斯创新
+    **************************************************************/
+   #include <stdio.h>
+
+   int main(void)
+   {
+       float value1,value2; 
+       float temp;
+       
+       printf("请输入两个实数\r\n");               //打印提醒信息
+       scanf("%f,%f",&value1,&value2);           //获取键盘输入
+
+       if(value2 > value1)
+       {
+           temp = value1;
+           value1 = value2;
+           value2 =temp;
+       }
+       printf("%f,%f\r\n",value1,value2);  
+       return 0;
+   }
+
+
+.. code-block:: c
+   :caption: if语句的一般形式
    :linenos:
 
    //C语言中if语句的表现形式有三种:
@@ -57,11 +89,11 @@
    }
 
    //二是:
-   if(表达式)
+   if(表达式1)
    {
        //逻辑值为真则执行
    }
-   else if
+   else if(表达式2)
    {
        //逻辑值为假则执行
    }
@@ -76,9 +108,36 @@
 
 C语言提供另外一种分支结构,通过switch语句实现。
 
-.. code-blockc
-   :caption: c test
-   :emphasize-lines: 4,5
+.. code-block:: c
+   :caption: switch语句使用举例
+   :linenos:
+
+    /***************************************************************
+    * @file       area_circle.c
+    * @brief      输入分数，输出等级
+    * @author     奈斯创新
+    **************************************************************/
+   #include <stdio.h>
+
+   int main(void)
+   {
+       char license; 
+       
+       printf("请输入A-C的城市车牌编号\r\n");               //打印提醒信息
+       scanf("%c",&license);           //获取键盘输入
+       
+       switch(license)
+       {
+           case 'A' : printf("合肥\r\n");break;
+           case 'B' : printf("芜湖\r\n");break;
+           case 'C' : printf("蚌埠\r\n");break;
+           default: printf("输入错误\r\n");
+       }
+       return 0;
+   }
+
+.. code-block:: c
+   :caption: printf函数使用举例
    :linenos:
 
    switch(表达式)
@@ -90,9 +149,8 @@ C语言提供另外一种分支结构,通过switch语句实现。
        default:语句或者代码块
    }
 
-.. code-blockc
-   :caption: c test
-   :emphasize-lines: 4,5
+.. code-block:: c
+   :caption: printf函数使用举例
    :linenos:
 
    #include <stdio.h>
@@ -115,9 +173,8 @@ C语言提供另外一种分支结构,通过switch语句实现。
        return 0;
    }
 
-.. code-blockc
-   :caption: c test
-   :emphasize-lines: 4,5
+.. code-block:: c
+   :caption: printf函数使用举例
    :linenos:
 
    switch(表达式)
@@ -129,9 +186,8 @@ C语言提供另外一种分支结构,通过switch语句实现。
        default:语句或者代码块n+1;break;
    }
 
-.. code-blockc
-   :caption: c test
-   :emphasize-lines: 4,5
+.. code-block:: c
+   :caption: printf函数使用举例
    :linenos:
 
    #include <stdio.h>
@@ -159,9 +215,8 @@ C语言提供另外一种分支结构,通过switch语句实现。
 
 如果一个if语句中包含另外一个if语句,就称为if语句的嵌套,也称为分支结构的嵌套。
 
-.. code-blockc
-   :caption: c test
-   :emphasize-lines: 4,5
+.. code-block:: c
+   :caption: printf函数使用举例
    :linenos:
 
    if()
@@ -183,6 +238,20 @@ C语言提供另外一种分支结构,通过switch语句实现。
        }
    }
 
+
+4.1.2.switch与if分支嵌套的区别
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+   - if语句可以进行大小取值范围的判断
+   - if语句可以对浮点数进行判断
+   - switch语句只能进行相等与否判断
+   - switch语句进行整数的判断
+   - switch语句进行整数的判断，case标签只能是常量
+
+
+
 4.2.循环结构
 ----------------------
 
@@ -194,9 +263,8 @@ C语言中有3种方式实现循环语句。
 
    while语句中只要表达式的值为真,则执行循环体,直到表达式为假。
 
-.. code-blockc
-   :caption: c test
-   :emphasize-lines: 4,5
+.. code-block:: c
+   :caption: printf函数使用举例
    :linenos:
 
    while (表达式)
@@ -215,9 +283,8 @@ C语言中有3种方式实现循环语句。
 
 C语言中第3种实现循环结构的是for语句,相比较于while和do-while语句,for循环更加简洁、灵活。
 
-.. code-blockc
-   :caption: c test
-   :emphasize-lines: 4,5
+.. code-block:: c
+   :caption: printf函数使用举例
    :linenos:
 
    for(表达式1;表达式2;表达式3)
@@ -229,9 +296,8 @@ C语言中第3种实现循环结构的是for语句,相比较于while和do-while�
 
 实现一个火箭发射10秒倒计时的函数。
 
-.. code-blockc
-   :caption: c test
-   :emphasize-lines: 4,5
+.. code-block:: c
+   :caption: printf函数使用举例
    :linenos:
 
    #include <stdio.h>
@@ -246,13 +312,12 @@ C语言中第3种实现循环结构的是for语句,相比较于while和do-while�
        return 0;
    }
 
-   问题:实现判断一个数是不是素数？
+问题:实现判断一个数是不是素数？
 
-   分析:素数又称质数。所谓素数是指除了1和它本身以外,不能被任何整数整除的数,反之称之为合数。0和1既不是素数也不是合数。可以用2到这个数本身一个数一个数试的方法,在这个数不是很大的情况下显然是可行的。
+分析:素数又称质数。所谓素数是指除了1和它本身以外,不能被任何整数整除的数,反之称之为合数。0和1既不是素数也不是合数。可以用2到这个数本身一个数一个数试的方法,在这个数不是很大的情况下显然是可行的。
 
-.. code-blockc
-   :caption: c test
-   :emphasize-lines: 4,5
+.. code-block:: c
+   :caption: printf函数使用举例
    :linenos:
 
    #include <stdio.h>
@@ -280,9 +345,8 @@ C语言中第3种实现循环结构的是for语句,相比较于while和do-while�
 
 实现乘法表打印。
 
-.. code-blockc
-   :caption: c test
-   :emphasize-lines: 4,5
+.. code-block:: c
+   :caption: printf函数使用举例
    :linenos:
 
    #include <stdio.h>
@@ -305,9 +369,8 @@ C语言中第3种实现循环结构的是for语句,相比较于while和do-while�
 
    在switch语句中提到break语句,当时只知道break语句有跳出功能。下面具体来说break语句的用法。回到求一个数是不是素数的问题,for(int i=2;i<=num;i++)由于一个数不可能被大于其一半的数整除,所以在2到其值一半的数中能找到把它整除的数就是合数,可以改进为for(int i=2;i<=num/2;i++)。一个数可能被多个数整除,只要找到其中一个能把它整除的数即可,而不用全部遍历。
 
-.. code-blockc
-   :caption: c test
-   :emphasize-lines: 4,5
+.. code-block:: c
+   :caption: printf函数使用举例
    :linenos:
 
    #include <stdio.h>
@@ -336,15 +399,12 @@ C语言中第3种实现循环结构的是for语句,相比较于while和do-while�
 4.2.5.continue语句
                   
 
+前面学习了break语句,break语句用于跳出for循环,还有一种情况是跳出本轮循环,然后继续循环下一轮循环。下面引出continue语句,当满足某种条件时候,跳出本轮循环,直接执行下一轮循环。
+编写一个程序输入一串字符,忽略字符中的空格,并打印出来。
 
-
-   前面学习了break语句,break语句用于跳出for循环,还有一种情况是跳出本轮循环,然后继续循环下一轮循环。下面引出continue语句,当满足某种条件时候,跳出本轮循环,直接执行下一轮循环。
-
-
-
-   编写一个程序输入一串字符,忽略字符中的空格,并打印出来。
-
-.. code c
+.. code-block:: c
+   :caption: printf函数使用举例
+   :linenos:
 
    #include <stdio.h>
 
@@ -371,4 +431,6 @@ C语言中第3种实现循环结构的是for语句,相比较于while和do-while�
        return 0;
    }
 
-\*4.2.6.goto语句
+
+
+4.2.6.goto语句
