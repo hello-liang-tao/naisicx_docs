@@ -21,6 +21,12 @@ Read the Docs simplifies software documentation by building, versioning, and hos
    :hidden:
    :caption: [奈斯创新]编程语言学习
    
-   
    programming_language_tutorial/c_programming/index
 
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+   :caption: [奈斯创新]智能硬件教程
+
+   smart_hardware_tutorial/OpenWRT/index
