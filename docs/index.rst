@@ -30,3 +30,5 @@ Read the Docs simplifies software documentation by building, versioning, and hos
    :caption: [奈斯创新]智能硬件教程
 
    smart_hardware_tutorial/OpenWRT/index
+
+   smart_hardware_tutorial/Arduino/index
