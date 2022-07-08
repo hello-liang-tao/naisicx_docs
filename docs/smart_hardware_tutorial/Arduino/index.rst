@@ -6,3 +6,4 @@
    :caption: [奈斯创新]智能硬件教程
 
    docs/1.arduino 教程介绍
+   docs/2.Arduino IDE下载与安装
