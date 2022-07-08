@@ -1,57 +1,49 @@
-1.🌟Arduino IDE下载与安装🌟
+🌟2.Arduino IDE下载与安装🌟
 ===================================
 
-Arduino可以通过Arduino IDE编程，也可以在浏览器中编程，我们是将软件安装到电脑使用
+Arduino可以通过Arduino IDE编程,也可以在浏览器中编程,我们是将软件安装到电脑使用
 
 🚀Arduino IDE软件下载
 --------------------------------------------
 
-🔸**推荐**腾讯微云：https://www.Arduino.cn/thread-5838-1-1.html
+🎯软件下载
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-🔸官网下载：https://www.Arduino.cc/en/Main/Software
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210108194727935.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NodWlnZTIyMTU=,size_16,color_FFFFFF,t_70)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210108194727974.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NodWlnZTIyMTU=,size_16,color_FFFFFF,t_70)
-#### 🎯软件安装[可跳过]
+🔸 ``推荐`` 腾讯微云:https://www.Arduino.cn/thread-5838-1-1.html
 
-软件安装比较简单，像安装QQ一样简单，不需要特殊设置，直接默认安装即可，我们以window平台为例简单介绍软件安装
+🔸官网下载:https://www.Arduino.cc/en/Main/Software
+
+🎯软件安装[可跳过]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+软件安装比较简单,像安装QQ一样简单,不需要特殊设置,直接默认安装即可,我们以window平台为例简单介绍软件安装
 
 🔸双击开始安装软件
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210108195050989.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NodWlnZTIyMTU=,size_16,color_FFFFFF,t_70#pic_center)
 
-🔸默认即可，这里会安装驱动，如果使用的是官方板后面就不需要安装usb转串口驱动，如果是非官方板需要手动安装usb转串口驱动，我们在后面有如何手动安装usb转串口驱动
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210108195110295.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NodWlnZTIyMTU=,size_16,color_FFFFFF,t_70#pic_center)
+🔸默认即可,这里会安装驱动,如果使用的是官方板后面就不需要安装usb转串口驱动,如果是非官方板需要手动安装usb转串口驱动,我们在后面有如何手动安装usb转串口驱动
 
-🔸强烈建议默认，后面用到各种库文件也将安装在这个位置
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210108195134324.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NodWlnZTIyMTU=,size_16,color_FFFFFF,t_70#pic_center)
+🔸强烈建议默认,后面用到各种库文件也将安装在这个位置
 
 🔸正在安装...
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210108195201307.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NodWlnZTIyMTU=,size_16,color_FFFFFF,t_70#pic_center)
 
 🔸安装完成“Close”
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210108195217496.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NodWlnZTIyMTU=,size_16,color_FFFFFF,t_70#pic_center)
 
-🛴usb转串口驱动安装 **[官方板可跳过]**
+🚀usb转串口驱动安装[官方板可跳过]
 -----------------------------------------------------
 
-购买官方板不需要安装usb转串口驱动，在安装IDE时候就已经安装，可以跳过。如果是购买非官方板需要安装USB转串口驱动
+购买官方板不需要安装usb转串口驱动,在安装IDE时候就已经安装,可以跳过。如果是购买非官方板需要安装USB转串口驱动
 
 🔸下载地址：http://www.wch.cn/product/CH340.html
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210108195318862.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NodWlnZTIyMTU=,size_16,color_FFFFFF,t_70)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210108195318737.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NodWlnZTIyMTU=,size_16,color_FFFFFF,t_70)
 
 🔸安装
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210108195346329.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NodWlnZTIyMTU=,size_16,color_FFFFFF,t_70)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210108195346329.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NodWlnZTIyMTU=,size_16,color_FFFFFF,t_70)
 
-🚢验证
+🚀验证
 -------------------------------------------
 
 将Arduino nano 开发板通过usb连接电脑
 
 🔶打开软件
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210108195428443.bmp?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NodWlnZTIyMTU=,size_16,color_FFFFFF,t_70)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210108195427878.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NodWlnZTIyMTU=,size_16,color_FFFFFF,t_70)
 
-🔶在菜单栏“工具”->"端口"找到“COMx”说明安装完成，在我电脑是分配COM4，如果有多个COMx可以拔插排除，不同电脑分配不一样
+🔶在菜单栏“工具”->"端口"找到“COMx”说明安装完成,在我电脑是分配COM4,如果有多个COMx可以拔插排除,不同电脑分配不一样
 
-到此Arduino IDE以及USB转串口驱动安装完毕，下面开始Arduino愉快的开发🎉🎉🎉
+到此Arduino IDE以及USB转串口驱动安装完毕,下面开始Arduino愉快的开发🎉🎉🎉
