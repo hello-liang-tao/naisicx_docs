@@ -1,2 +1,68 @@
 🌟10.Arduino 舵机控制🌟
 ===================================
+ 
+舵机是一种常用的伺服电机,可以按照需要旋转不同角度。Arduino库已经为我们简化了舵机的使用,只需要根据需要设定不同的旋转角度值即可
+
+🚀准备知识
+
+使用的SG90舵机工作电压是4.8V,接到5V也是没有问题的,图中的黄色实际接近橙色连接信号脚D9
+
+
+
+#### 📝编写代码
+
+🔸attach()
+
+🔸write()
+
+🔸map()
+
+attach()指定信号线接在Arduino那个引脚
+
+write()写入舵机旋转角度的度数,0-180°
+
+map()数值映射函数,例如用analogRead()读取的数值范围为0-1023,而write()输入范围为0-180,因此可以使用
+
+.. code-block:: c
+   :caption: 定义一个浮点型变量
+   :linenos:
+
+    int val = analogRead(PIN);         //PIN为电压输入引脚定义,analogRead()读取数值
+    val = map(val, 0, 1023, 0, 180);   //将0-1023换算到0-180
+    myservo.write(val);                //写入角度值
+
+
+.. code-block:: c
+   :caption: 定义一个浮点型变量
+   :linenos:
+
+    #include <Servo.h>                         //引用头文件
+
+    Servo myservo;                             // 定义Servo对象
+    int pos = 0;                               // 角度变量
+
+    void setup() {
+      myservo.attach(9);                       // 控制线连接数字D9
+    }
+    
+    void loop() {
+      for (pos = 0; pos <= 180; pos ++) {     // 0°到180°
+        myservo.write(pos);                   // 舵机角度写入
+        delay(100);                           // 等待舵机机械响应时间,同样也可以控制旋转1°的快慢
+      }
+      
+      for (pos = 180; pos >= 0; pos --) {     // 从180°到0°
+        myservo.write(pos);                   // 舵机角度写入
+        delay(10);                            // 10ms延时,旋转1°速度大于100ms
+      }
+    }
+
+
+#### 👍上传代码
+
+上传代码,舵机在0-180°缓慢旋转,180-0°快速旋转
+
+
+
+
+

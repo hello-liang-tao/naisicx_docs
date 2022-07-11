@@ -1,2 +1,54 @@
 🌟5.Arduino 按键控制LED🌟
 ===================================
+
+<h1 align = "center">🌟Arduino 按键控制LED灯🌟</h1>
+
+上一章我们使用Arduino nano板上的LED灯实现闪烁功能，下面我们使用外接按键控制这个灯的亮灭。
+
+#### 🚀准备知识
+
+如下图，使用2号（PD2）引脚作为按键输入状态检测引脚，按键另一端接入5V即高电平，因此当按键按下时候2号引脚检测到高电平，按键松开默认低电平[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-RmSqXNTV-1610107675784)(/image/Pinout-NANO_latest.png)]
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210108200826277.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NodWlnZTIyMTU=,size_16,color_FFFFFF,t_70#pic_center)
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210108200851515.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NodWlnZTIyMTU=,size_16,color_FFFFFF,t_70#pic_center)
+
+连线说明：电阻为10K，一端连接在5V，另一端连接在2号引脚，即上拉电阻。实现的功能是当按键松开的时候2号引脚是高电平，当按键下时候2号引脚是低电平
+
+#### 📝编写代码
+
+.. code-block:: c
+   :caption: 定义一个浮点型变量
+   :linenos:
+ 
+    int buttonState = 0;                     //定义一个变量用来记录按键输入状态      
+    int ledState = 0;                        //定义一个变量用来记录LED状态      
+
+    void setup() {
+      pinMode(13, OUTPUT);                   //初始化13号引脚用来驱动LED
+      pinMode(2, INPUT);                     //初始化2号引脚用来检测按键输入状态
+    }
+
+    void loop() {
+      buttonState = digitalRead(2);         //用于读取2号引脚电平状态，检测低电平则输出0（LOW）
+      if (buttonState == LOW) {
+        delay(200);
+        buttonState = digitalRead(2);       //两次检测起到按键消抖的作用
+        if(buttonState == LOW){
+        
+          if(ledState ==0){                 //LED开始的时候是关闭的状态，按下按键LED亮，再次按下按键LED灭
+            digitalWrite(13, HIGH);
+            ledState = 1;                   //改变LED状态             
+            } else {
+            digitalWrite(13, LOW);
+            ledState = 0;
+          }
+        }
+      } 
+    }
+
+
+#### 👍上传代码
+
+上传代码，按下按键LED亮，再次按下按键LED灭
+

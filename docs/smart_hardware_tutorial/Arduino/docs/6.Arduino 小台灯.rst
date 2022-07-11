@@ -1,2 +1,53 @@
 🌟6.Arduino 小台灯🌟
 ===================================
+
+<h1 align = "center">🌟Arduino小台灯🌟</h1>
+
+通过前面两个实验能够点亮一盏LED灯同时能够通过按键控制LED的开灭，现在在之前的基础上通过电位器实现LED亮度可调的功能
+
+#### 🚀准备知识
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210112090729650.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NodWlnZTIyMTU=,size_16,color_FFFFFF,t_70#pic_center)
+
+#### 📝编写代码
+
+.. code-block:: c
+   :caption: 定义一个浮点型变量
+   :linenos:
+
+    #define LED_PIN (13)                     //宏定义LED灯引脚为D13
+    #define BUTTON_PIN (2)                   //宏定义按键引脚为D2
+    #define POT_PIN (21)                     //宏定义电位计输入引脚为D21
+
+    boolean buttonStatue = false;             //变量ledStatue用来记录按键输入状态,LED,false关、true开  
+    boolean ledStatue = false;                //变量用来记录LED状态,,false为松开，true为按下
+    int value =0;                             //变量value记录输入
+
+    void setup() {
+      pinMode(LED_PIN, OUTPUT);               //初始化LED_PIN引脚为输出模式驱动
+      pinMode(BUTTON_PIN, INPUT);             //初始化BUTTON_PIN引脚为输入模式检测按键状态
+    }
+
+    void loop() {
+      buttonStatue = digitalRead(BUTTON_PIN); //用于读取BUTTON_PIN引脚电平状态，检测低电平则输出0（LOW）
+      if (buttonStatue == LOW) {
+        delay(100);
+        buttonStatue = digitalRead(BUTTON_PIN);//两次检测起到按键消抖的作用
+        if(buttonStatue == LOW){
+          if(ledStatue ==false){               //LED开始的时候是关闭的状态，按下按键LED亮，再次按下按键LED灭
+            ledStatue = true;                  //改变LED状态             
+            } else {
+            ledStatue = false;
+          }
+        }
+      }  
+      value = analogRead(POT_PIN);       
+      if(ledStatue == false){  
+        value =0;
+      }
+      analogWrite(3, value/4);
+    }
+
+
+#### 👍上传代码
+
+上传代码，按下按键LED亮，再次按下按键LED灭
