@@ -1,2 +1,80 @@
 🌟4.Arduino 点亮LED🌟
 ===================================
+
+<h1 align = "center">🌟Arduino 点亮LED🌟</h1>
+
+在学习**C语言**的时候我们编写的第一行代码是```printf("hello world");```即通过控制台输出一段字符。那么编写Arduino第一行代码是什么呢？Arduino编程从点亮一盏LED灯开始！今天我们一块做一位**点灯大师**🎇
+
+#### 🚀准备知识
+
+首先我们先了解下Arduino nano 的**脚位图**，由下图可以看出LED_BUILTIN这个**LED**是接在D13，我们在编写代码时候使用**13**或者**LED_BUILTIN**。使用板上的LED也可以，我们外接一个LED灯
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210108211057371.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NodWlnZTIyMTU=,size_16,color_FFFFFF,t_70#pic_center)
+
+
+**面包板**是用来连接各个模块的电路板，具有一下特性：
+
+🔸划<font color=blue>蓝线 </font>部分沿着蓝线的**行孔**连接，划<font color=red>红线 </font>部分沿着红线的**行孔**连接
+
+🔸在同一**列孔**‘A’B‘C’D‘E’连接，**列孔**'F'G'H'I'J'连接。‘A’B‘C’D‘E’和'F'G'H'I'J'不连接
+
+🔸'A'B'C'D'E'F'G'H'I'J'所在**行孔**相互均不连接
+
+**LED**即发光二极管，**引脚长为正极，短为负极**或者**内部晶体大为负极，小为正极**
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210108211118822.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NodWlnZTIyMTU=,size_16,color_FFFFFF,t_70#pic_center)
+
+
+#### 📝编写代码
+
+关键名称：
+
+🔸**高电平**：高电平就是数字逻辑1，Arduino nano 是5V供电，因此高电平就是5V
+
+🔸**低电平**：低电平就是数字逻辑0，低电平一般指0v电压，也就是地
+
+下面这些代码也可以在**文件**->**示例**中找到
+
+.. code-block:: c
+   :caption: 定义一个浮点型变量
+   :linenos:
+
+    void setup() {
+      //如之前所说，注释是可以删除的，只是起到提示的作用
+      //这里使用的13号引脚也就是脚位图上面的PB5,对应一个LED
+      //pinMode(13, OUTPUT);的含义是我们使用13这个引脚，同时将它设置为OUTPUT输出模式，来驱动LED灯珠
+      pinMode(13, OUTPUT);
+    }
+
+    void loop() {
+      //digitalWrite(13, HIGH);含义是让13号引脚输出一个高电平，由于LED灯的负极恒接在低电平，
+      //因此只要给正极一个高电平就能点亮LED
+      digitalWrite(13, HIGH);         
+      //保持1000毫秒，也就是保持亮1秒钟
+      delay(1000);                    
+      //在13号引脚上接入低电平LED就不能被点亮，熄灭
+      digitalWrite(13, LOW);          
+      //保持1000毫秒，也就是保持熄灭1秒钟
+      delay(1000);   
+      //loop()函数的含义就是不停的循环，亮灭亮灭...永无停歇                  
+    }
+
+
+#### 🎯上传代码
+
+🔶选择使用的Arduino开发板类型
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210108211141436.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NodWlnZTIyMTU=,size_16,color_FFFFFF,t_70#pic_center)
+
+
+需要注意的是选择开发板“**Arduino Nano**”,处理器“**ATmega328P (Old Bootloader)**”,端口根据自己实际情况选择
+
+<font size=1>注：我的板子使用ATmega328P处理器会报<font color=#FF0000>  上传项目错误</font>   ，因此使用ATmega328P (Old Bootloader)，如果无法上传两个都试一下</font>
+
+🔶点击**编译**编译![在这里插入图片描述](https://img-blog.csdnimg.cn/20210108211159495.png)
+即可验证代码使用编写有误，编写无误就可以点击**上传**![在这里插入图片描述](https://img-blog.csdnimg.cn/2021010821162544.png)
+**烧录**代码
+
+当提示“**上传成功。**”说明我们代码已经烧录到Arduino芯片，可以看到LED亮->灭->亮->灭循环
+
+

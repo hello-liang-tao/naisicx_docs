@@ -1,2 +1,26 @@
 🌟3.Arduino 程序结构🌟
 ===================================
+
+<h1 align = "center">🌟Arduino程序结构🌟</h1>
+
+在本章中我们将初步了解Arduino程序结构，后面我们将在此结构中来编写代码。笔者认为学习Arduino分为两个部分，第一，Arduino程序目录结构、Arduino库使用等，第二，C++编程语言。C++编程语言好比我们学会了写汉字，而Arduino就好比我们使用汉字来写作文。
+
+#### 🚀Arduino程序结构
+
+当我们打开Arduino软件时候，会为我们新建一个名为**sketch**(草图)的文件，当然sketch我们也可以重命名
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210108195608653.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NodWlnZTIyMTU=,size_16,color_FFFFFF,t_70#pic_center)
+
+Arduino程序结构分为如下三点：
+
+🔸setup()函数
+
+🔸loop()函数
+
+🔸注释
+
+setup()**函数**或者称为setup()**方法**（function）是完成特定功能的集合，setup()是用来编写开始只做一次的事情，setup()函数好比早上起来**刷牙洗脸**🚿，白天一天只做一次
+
+loop()函数执行完setup()函数后一直执行的函数，loop()函数好比是**程序员写代码**🐱‍💻，从早到晚，没有休止。
+
+“//”开头，如：// put your setup code here, to run once:，所谓注释就是给自己或者看的，防止时间长遗忘和必要的说明，因此将其删除与否不会影响代码执行
+

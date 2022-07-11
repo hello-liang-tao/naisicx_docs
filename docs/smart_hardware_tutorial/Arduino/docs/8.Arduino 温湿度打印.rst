@@ -1,2 +1,81 @@
 🌟8.Arduino 温湿度打印🌟
 ===================================
+
+<h1 align = "center">🌟Arduino 温湿度打印🌟</h1>
+
+之前编写的代码都相对简单，我们使用DHT11传感器也可以我们自己编写代码，如果有人已经编写好了直接拿来用是不是更简单，站在巨人的肩膀上才能看的更远
+
+#### 🚀准备知识
+
+话不多说上图
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210112153150557.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NodWlnZTIyMTU=,size_16,color_FFFFFF,t_70#pic_center)
+
+
+
+#### 📝编写代码
+
+.. code-block:: c
+   :caption: 定义一个浮点型变量
+   :linenos:
+
+    #include "DHT.h"
+
+    #define DHTPIN 2     // Digital pin connected to the DHT sensor
+    #define DHTTYPE DHT11   // DHT 11
+
+    DHT dht(DHTPIN, DHTTYPE);
+
+    void setup() {
+      Serial.begin(9600);
+      Serial.println(F("DHT11 test!"));
+      dht.begin();
+    }
+
+    void loop() {
+      delay(2000);// Wait a few seconds between measurements.
+
+      // Reading temperature or humidity takes about 250 milliseconds!
+      // Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)
+      float h = dht.readHumidity();
+      // Read temperature as Celsius (the default)
+      float t = dht.readTemperature();
+      // Read temperature as Fahrenheit (isFahrenheit = true)
+      float f = dht.readTemperature(true);
+
+      // Check if any reads failed and exit early (to try again).
+      if (isnan(h) || isnan(t) || isnan(f)) {
+        Serial.println(F("Failed to read from DHT sensor!"));
+        return;
+      }
+
+      // Compute heat index in Fahrenheit (the default)
+      float hif = dht.computeHeatIndex(f, h);
+      // Compute heat index in Celsius (isFahreheit = false)
+      float hic = dht.computeHeatIndex(t, h, false);
+
+      Serial.print(F("Humidity: "));
+      Serial.print(h);
+      Serial.print(F("%  Temperature: "));
+      Serial.print(t);
+      Serial.print(F("°C "));
+      Serial.print(f);
+      
+      Serial.print(F("°F  Heat index: "));
+      Serial.print(hic);
+      Serial.print(F("°C "));
+      Serial.print(hif);
+      Serial.println(F("°F"));
+    }
+
+
+#### 👍上传代码
+
+上传代码，点击![在这里插入图片描述](https://img-blog.csdnimg.cn/20210112091324505.png#pic_center)
+打开串口监视
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/2021011209130427.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NodWlnZTIyMTU=,size_16,color_FFFFFF,t_70#pic_center)
+
+
+
+
+

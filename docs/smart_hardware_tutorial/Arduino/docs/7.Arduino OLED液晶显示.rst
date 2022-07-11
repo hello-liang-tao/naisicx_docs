@@ -1,2 +1,42 @@
 🌟7.Arduino OLED液晶显示🌟
 ===================================
+
+<h1 align = "center">🌟Arduino OLED液晶显示🌟</h1>
+
+OLED液晶是常用的显示设备，我们使用的是0.96寸的128*64分辨率，使用的是I2C接口
+
+#### 🚀准备知识
+
+接线如下图
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/2021011215375126.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NodWlnZTIyMTU=,size_16,color_FFFFFF,t_70#pic_center)
+
+
+#### 📝编写代码
+
+.. code-block:: c
+   :caption: 定义一个浮点型变量
+   :linenos:
+
+    #include "Arduino_SensorKit.h"       //Arduino传感器包用到头文件
+
+    void setup()  
+    {
+      Oled.begin();                      //OLED初始化
+      Oled.setFlipMode(true);            //OLED显示模式
+    }  
+      
+    void loop() {
+      int random_value = analogRead(A0);   //read value from A0
+
+      Oled.setFont(u8x8_font_chroma48medium8_r); 
+      Oled.setCursor(0, 33);    // Set the Coordinates 
+      Oled.print("Analog Value:");   
+      Oled.print(random_value); // Print the Values  
+      Oled.refreshDisplay();    // Update the Display 
+      delay(1000);
+    }
+
+
+#### 👍上传代码
+
