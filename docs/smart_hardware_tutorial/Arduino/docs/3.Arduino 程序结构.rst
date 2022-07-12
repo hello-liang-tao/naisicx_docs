@@ -1,14 +1,26 @@
-🌟3.Arduino 程序结构🌟
+3.Arduino 程序结构
 ===================================
-
-<h1 align = "center">🌟Arduino程序结构🌟</h1>
 
 在本章中我们将初步了解Arduino程序结构，后面我们将在此结构中来编写代码。笔者认为学习Arduino分为两个部分，第一，Arduino程序目录结构、Arduino库使用等，第二，C++编程语言。C++编程语言好比我们学会了写汉字，而Arduino就好比我们使用汉字来写作文。
 
 #### 🚀Arduino程序结构
 
 当我们打开Arduino软件时候，会为我们新建一个名为**sketch**(草图)的文件，当然sketch我们也可以重命名
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210108195608653.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NodWlnZTIyMTU=,size_16,color_FFFFFF,t_70#pic_center)
+
+.. code-block:: c
+   :caption: 定义一个浮点型变量
+   :linenos:
+
+    void setup() {
+    // put your setup code here, to run once:
+
+    }
+
+    void loop() {
+    // put your main code here, to run repeatedly:
+
+    }
+
 
 Arduino程序结构分为如下三点：
 
