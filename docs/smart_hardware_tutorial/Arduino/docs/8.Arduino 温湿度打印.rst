@@ -1,18 +1,16 @@
-🌟8.Arduino 温湿度打印🌟
+8.Arduino 温湿度打印
 ===================================
-
-<h1 align = "center">🌟Arduino 温湿度打印🌟</h1>
 
 之前编写的代码都相对简单，我们使用DHT11传感器也可以我们自己编写代码，如果有人已经编写好了直接拿来用是不是更简单，站在巨人的肩膀上才能看的更远
 
-#### 🚀准备知识
+单总线协议
+-----------------------------------
 
-话不多说上图
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210112153150557.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NodWlnZTIyMTU=,size_16,color_FFFFFF,t_70#pic_center)
+DHT11温湿度传感器
+-----------------------------------
 
-
-
-#### 📝编写代码
+程序源码
+----------------------------------
 
 .. code-block:: c
    :caption: 定义一个浮点型变量

@@ -1,14 +1,25 @@
-🌟6.Arduino 小台灯🌟
+6.Arduino 小台灯
 ===================================
 
-<h1 align = "center">🌟Arduino小台灯🌟</h1>
+通过前面两个实验能够点亮一盏LED灯同时能够通过按键控制LED的开灭,现在在之前的基础上通过电位器实现LED亮度可调的功能
 
-通过前面两个实验能够点亮一盏LED灯同时能够通过按键控制LED的开灭，现在在之前的基础上通过电位器实现LED亮度可调的功能
+ADC
+-----------------------------------
 
-#### 🚀准备知识
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210112090729650.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NodWlnZTIyMTU=,size_16,color_FFFFFF,t_70#pic_center)
+ADC模拟数字转换器即A/D转换器,或简称ADC,通常是指一个将模拟信号转变为数字信号的电子元件。通常的模数转换器是将一个输入电压信号转换为一个输出的数字信号。
 
-#### 📝编写代码
+DAC
+-----------------------------------
+
+DAC是数字模拟转换器,即D/A转换器,或简称DAC,是一种将数字信号转换为模拟信号(以电流、电压或电荷的形式)的设备。在很多数字系统中(例如计算机),信号以数字方式存储和传输,而数字模拟转换器可以将这样的信号转换为模拟信号,从而使得它们能够被外界(人或其他非数字系统)识别。
+
+电位器
+-----------------------------------
+
+电位器是具有三个引出端、阻值可按某种变化规律调节的电阻元件。电位器通常由电阻体和可移动的电刷组成。当电刷沿电阻体移动时，在输出端即获得与位移量成一定关系的电阻值或电压。
+
+程序源码
+----------------------------------
 
 .. code-block:: c
    :caption: 定义一个浮点型变量
@@ -19,7 +30,7 @@
     #define POT_PIN (21)                     //宏定义电位计输入引脚为D21
 
     boolean buttonStatue = false;             //变量ledStatue用来记录按键输入状态,LED,false关、true开  
-    boolean ledStatue = false;                //变量用来记录LED状态,,false为松开，true为按下
+    boolean ledStatue = false;                //变量用来记录LED状态,,false为松开,true为按下
     int value =0;                             //变量value记录输入
 
     void setup() {
@@ -28,12 +39,12 @@
     }
 
     void loop() {
-      buttonStatue = digitalRead(BUTTON_PIN); //用于读取BUTTON_PIN引脚电平状态，检测低电平则输出0（LOW）
+      buttonStatue = digitalRead(BUTTON_PIN); //用于读取BUTTON_PIN引脚电平状态,检测低电平则输出0（LOW）
       if (buttonStatue == LOW) {
         delay(100);
         buttonStatue = digitalRead(BUTTON_PIN);//两次检测起到按键消抖的作用
         if(buttonStatue == LOW){
-          if(ledStatue ==false){               //LED开始的时候是关闭的状态，按下按键LED亮，再次按下按键LED灭
+          if(ledStatue ==false){               //LED开始的时候是关闭的状态,按下按键LED亮,再次按下按键LED灭
             ledStatue = true;                  //改变LED状态             
             } else {
             ledStatue = false;
@@ -46,8 +57,3 @@
       }
       analogWrite(3, value/4);
     }
-
-
-#### 👍上传代码
-
-上传代码，按下按键LED亮，再次按下按键LED灭

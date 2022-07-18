@@ -1,3 +1,5 @@
 _build
 *.exe
 .vscode
+.DS_Store
+docs/.DS_Store
