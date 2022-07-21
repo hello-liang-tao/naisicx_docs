@@ -17,3 +17,15 @@
    docs/10.Arduino 舵机控制
    docs/11.Arduino 超声波测距
    docs/12.Arduino 智能垃圾桶
+   docs/13.Arduino 红外控制LED灯
+   docs/14.Arduino RTC电子时钟
+   docs/15.Arduino 定时感应路灯
+   docs/16.Arduino 楼道感应灯
+   docs/17.Arduino 人体有害气体检测
+   docs/18.Arduino 花草自动浇灌
+   docs/19.Arduino 火焰检测报警
+   docs/20.Arduino 液体位置检测
+   docs/21.Arduino 无极调速风扇
+   docs/22.Arduino 刷卡智能门禁
+   docs/23.Arduino 下雨自动关窗
+   docs/24.Arduino 抢答器
