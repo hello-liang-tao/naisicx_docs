@@ -83,10 +83,15 @@ PWM脉冲
 -------------------------------------
 
 
+
 程序源码
 ------------------------------------
 
-
+.. literalinclude:: ./../code/23.raindrop_detection/23.raindrop_detection.ino
+   :caption: 23.raindrop_detection.ino
+   :language: c++
+   :linenos:
+   :name: 23.raindrop_detection.ino
 
 
 
