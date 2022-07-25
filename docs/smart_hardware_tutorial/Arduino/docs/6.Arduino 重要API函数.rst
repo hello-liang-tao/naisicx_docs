@@ -1,0 +1,115 @@
+6.Arduino 重要API函数
+===============================
+
+数字引脚
+-------------------------------
+
+模式设置
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``pinMode(pin, mode)`` 
+
+``pin``:指定设置哪一个数字引脚的模式。
+
+``mode``:模式可以为INPUT, OUTPUT, or INPUT_PULLUP,分别是输入、输出、上拉输入。
+
+数字引脚读
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``digitalRead(pin)`` 当设置pinMode()为INPUT或者INPUT_PULLUP时,可以读取指定的数字IO输入的是低还是高电平。
+``pin``:指定读取哪一个数字引脚的电平。
+
+
+数字引脚写
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``digitalWrite(pin)`` 当设置pinMode()为OUTPUT时,可以向指定的数字IO写高或者低电平信号。
+``pin``:指定写哪一个数字引脚的电平。
+
+示例
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: c
+   :caption: f符号的使用
+   :linenos:
+   
+    int ledPin = 13;  // LED connected to digital pin 13
+    int inPin = 7;    // pushbutton connected to digital pin 7
+    int val = 0;      // variable to store the read value
+
+    void setup() {
+        pinMode(ledPin, OUTPUT);  // sets the digital pin 13 as output
+        pinMode(inPin, INPUT);    // sets the digital pin 7 as input
+    }
+
+    void loop() {
+        val = digitalRead(inPin);   // read the input pin
+        digitalWrite(ledPin, val);  // sets the LED to the button's value
+    }
+
+
+模拟引脚
+-------------------------------
+
+模拟引脚读
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``analogRead(pin)``
+
+pin: the name of the analog input pin to read from (A0 to A5 on most boards, A0 to A6 on MKR boards, A0 to A7 on the Mini and Nano, A0 to A15 on the Mega).
+
+The analog reading on the pin. Although it is limited to the resolution of the analog to digital converter (0-1023 for 10 bits or 0-4095 for 12 bits). Data type: int.
+
+
+模拟引脚写
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``analogWrite(pin)``
+
+pin: the Arduino pin to write to. Allowed data types: int.
+value: the duty cycle: between 0 (always off) and 255 (always on). Allowed data types: int.
+
+
+.. code-block:: c
+   :caption: f符号的使用
+   :linenos:
+
+    int analogPin = A3; // potentiometer wiper (middle terminal) connected to analog pin 3
+                        // outside leads to ground and +5V
+    int val = 0;  // variable to store the value read
+
+    void setup() {
+    Serial.begin(9600);           //  setup serial
+    }
+
+    void loop() {
+    val = analogRead(analogPin);  // read the input pin
+    Serial.println(val);          // debug value
+    }
+
+
+    int ledPin = 9;      // LED connected to digital pin 9
+    int analogPin = 3;   // potentiometer connected to analog pin 3
+    int val = 0;         // variable to store the read value
+
+    void setup() {
+    pinMode(ledPin, OUTPUT);  // sets the pin as output
+    }
+
+    void loop() {
+    val = analogRead(analogPin);  // read the input pin
+    analogWrite(ledPin, val / 4); // analogRead values go from 0 to 1023, analogWrite values from 0 to 255
+    }
+
+
+串口
+-------------------------------
+
+
+I2C
+------------------------------
+
+SPI 
+------------------------------------
+
+
